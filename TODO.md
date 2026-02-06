@@ -16,6 +16,7 @@
 ## UI/UX
 
 - [ ] Custom app icon
+- [ ] Ability to add a control to control center
 - [ ] Timestamp display (e.g. "2 min ago") on each item
 - [ ] Dark/light mode-aware styling
 - [ ] Drag and drop items to reorder or paste
