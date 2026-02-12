@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# mac-clip build-run script
+# Builds the project and runs the resulting app
+
+set -e
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$PROJECT_DIR"
+
+echo "🔨 Building MacClip..."
+xcodebuild -project MacClip.xcodeproj -scheme MacClip -configuration Debug build
+
+echo "🚀 Launching MacClip..."
+APP_PATH=$(xcodebuild -project MacClip.xcodeproj -scheme MacClip -showBuildSettings 2>/dev/null | grep ' BUILT_PRODUCTS_DIR' | awk '{print $3}')/MacClip.app
+
+if [ -d "$APP_PATH" ]; then
+  open "$APP_PATH"
+  echo "✅ MacClip launched!"
+else
+  echo "❌ Failed to find built app at $APP_PATH"
+  exit 1
+fi

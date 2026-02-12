@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# mac-clip test script
+# Runs the test suite
+
+set -e
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$PROJECT_DIR"
+
+echo "🧪 Running tests..."
+xcodebuild test -project MacClip.xcodeproj -scheme MacClip -destination 'platform=macOS'
+
+echo "✅ Tests passed!"

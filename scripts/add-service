@@ -1,0 +1,109 @@
+#!/bin/bash
+
+# mac-clip add-service script
+# Generates a new service with boilerplate
+
+set -e
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SERVICES_DIR="$PROJECT_DIR/MacClip/Services"
+TESTS_DIR="$PROJECT_DIR/MacClipTests"
+
+if [ -z "$1" ]; then
+    echo "Usage: add-service <ServiceName>"
+    echo "Example: add-service MyCustomService"
+    exit 1
+fi
+
+SERVICE_NAME="$1"
+
+# Validate name (must start with capital letter)
+if ! [[ "$SERVICE_NAME" =~ ^[A-Z] ]]; then
+    echo "❌ Service name must start with a capital letter"
+    exit 1
+fi
+
+SERVICE_FILE="$SERVICES_DIR/${SERVICE_NAME}.swift"
+TEST_FILE="$TESTS_DIR/${SERVICE_NAME}Tests.swift"
+
+# Check if service already exists
+if [ -f "$SERVICE_FILE" ]; then
+    echo "❌ Service already exists at $SERVICE_FILE"
+    exit 1
+fi
+
+# Create service file
+echo "📝 Creating $SERVICE_NAME.swift..."
+cat > "$SERVICE_FILE" << 'EOF'
+import Foundation
+
+final class SERVICE_NAME_PLACEHOLDER {
+    private let history: ClipboardHistory
+
+    init(history: ClipboardHistory = .shared) {
+        self.history = history
+    }
+
+    func start() {
+        // TODO: Implement service startup
+    }
+
+    func stop() {
+        // TODO: Implement service shutdown/cleanup
+    }
+}
+EOF
+
+# Replace placeholder with actual service name
+sed -i '' "s/SERVICE_NAME_PLACEHOLDER/$SERVICE_NAME/g" "$SERVICE_FILE"
+
+echo "✅ Created $SERVICE_FILE"
+
+# Ask if user wants to create tests
+read -p "Create test file? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "📝 Creating ${SERVICE_NAME}Tests.swift..."
+    cat > "$TEST_FILE" << 'EOF'
+import XCTest
+@testable import MacClip
+
+final class SERVICE_NAME_PLACEHOLDERTests: XCTestCase {
+    var sut: SERVICE_NAME_PLACEHOLDER!
+    var mockHistory: ClipboardHistory!
+
+    override func setUp() {
+        super.setUp()
+        mockHistory = ClipboardHistory()
+        sut = SERVICE_NAME_PLACEHOLDER(history: mockHistory)
+    }
+
+    override func tearDown() {
+        sut.stop()
+        sut = nil
+        mockHistory = nil
+        super.tearDown()
+    }
+
+    func testStart() {
+        // TODO: Test service startup
+        sut.start()
+    }
+
+    func testStop() {
+        // TODO: Test service shutdown
+        sut.stop()
+    }
+}
+EOF
+
+    # Replace placeholders
+    sed -i '' "s/SERVICE_NAME_PLACEHOLDER/$SERVICE_NAME/g" "$TEST_FILE"
+    echo "✅ Created $TEST_FILE"
+fi
+
+echo ""
+echo "🎉 Service created! Don't forget to:"
+echo "   1. Initialize $SERVICE_NAME in AppDelegate.swift"
+echo "   2. Add start()/stop() calls in appropriate lifecycle methods"
+echo "   3. Add tests for any new functionality"
