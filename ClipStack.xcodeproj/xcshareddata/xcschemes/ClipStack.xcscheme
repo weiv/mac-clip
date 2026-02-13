@@ -17,7 +17,7 @@
                BlueprintIdentifier = "A70000010000000000000001"
                BuildableName = "ClipStack.app"
                BlueprintName = "ClipStack"
-               ReferencedContainer = "container:MacClip.xcodeproj">
+               ReferencedContainer = "container:ClipStack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
                BlueprintIdentifier = "B70000010000000000000001"
                BuildableName = "ClipStackTests.xctest"
                BlueprintName = "ClipStackTests"
-               ReferencedContainer = "container:MacClip.xcodeproj">
+               ReferencedContainer = "container:ClipStack.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,10 +56,24 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A70000010000000000000001"
-            BuildableName = "MacClip.app"
-            BlueprintName = "MacClip"
-            ReferencedContainer = "container:MacClip.xcodeproj">
+            BuildableName = "ClipStack.app"
+            BlueprintName = "ClipStack"
+            ReferencedContainer = "container:ClipStack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
 </Scheme>

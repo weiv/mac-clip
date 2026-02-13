@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000010000000000000001 /* ClipStackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000001 /* ClipStackApp.swift */; };
+		A10000010000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000002 /* AppDelegate.swift */; };
+		A10000010000000000000003 /* ClipboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000003 /* ClipboardItem.swift */; };
+		A10000010000000000000004 /* ClipboardHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000004 /* ClipboardHistory.swift */; };
+		A10000010000000000000005 /* ClipboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000005 /* ClipboardMonitor.swift */; };
+		A10000010000000000000006 /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000006 /* PasteService.swift */; };
+		A10000010000000000000007 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000007 /* HotKeyManager.swift */; };
+		A10000010000000000000008 /* PermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000008 /* PermissionService.swift */; };
+		A10000010000000000000009 /* ClipboardMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000009 /* ClipboardMenuView.swift */; };
+		A1000001000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000A /* Assets.xcassets */; };
+		A1000001000000000000000B /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = A5000001000000000000000B /* HotKey */; };
+		A1000001000000000000000E /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000E /* PreferencesManager.swift */; };
+		A1000001000000000000000F /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000000F /* PreferencesView.swift */; };
+		A10000010000000000000010 /* Helpers/SettingsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010000000000000010 /* Helpers/SettingsOpener.swift */; };
+		B10000010000000000000001 /* ClipboardItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000010000000000000001 /* ClipboardItemTests.swift */; };
+		B10000010000000000000002 /* ClipboardHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000010000000000000002 /* ClipboardHistoryTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B50000010000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A70000010000000000000002 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A70000010000000000000001;
+			remoteInfo = ClipStack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A20000010000000000000001 /* ClipStackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipStackApp.swift; sourceTree = "<group>"; };
+		A20000010000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A20000010000000000000003 /* ClipboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardItem.swift; sourceTree = "<group>"; };
+		A20000010000000000000004 /* ClipboardHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHistory.swift; sourceTree = "<group>"; };
+		A20000010000000000000005 /* ClipboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitor.swift; sourceTree = "<group>"; };
+		A20000010000000000000006 /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
+		A20000010000000000000007 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
+		A20000010000000000000008 /* PermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionService.swift; sourceTree = "<group>"; };
+		A20000010000000000000009 /* ClipboardMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMenuView.swift; sourceTree = "<group>"; };
+		A2000001000000000000000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000001000000000000000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000001000000000000000D /* ClipStack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClipStack.entitlements; sourceTree = "<group>"; };
+		A2000001000000000000000E /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
+		A2000001000000000000000F /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		A20000010000000000000010 /* Helpers/SettingsOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers/SettingsOpener.swift; sourceTree = "<group>"; };
+		A30000010000000000000001 /* ClipStack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipStack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B20000010000000000000001 /* ClipboardItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardItemTests.swift; sourceTree = "<group>"; };
+		B20000010000000000000002 /* ClipboardHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHistoryTests.swift; sourceTree = "<group>"; };
+		B30000010000000000000001 /* ClipStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001000000000000000B /* HotKey in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B40000010000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A60000010000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A60000010000000000000002 /* ClipStack */,
+				B60000010000000000000001 /* ClipStackTests */,
+			);
+			sourceTree = "<group>";
+		};
+		A60000010000000000000002 /* ClipStack */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000001 /* ClipStackApp.swift */,
+				A20000010000000000000002 /* AppDelegate.swift */,
+				A60000010000000000000003 /* Models */,
+				A60000010000000000000004 /* Services */,
+				A60000010000000000000005 /* Views */,
+				A2000001000000000000000A /* Assets.xcassets */,
+				A2000001000000000000000C /* Info.plist */,
+				A2000001000000000000000D /* ClipStack.entitlements */,
+				A20000010000000000000010 /* Helpers/SettingsOpener.swift */,
+			);
+			path = ClipStack;
+			sourceTree = "<group>";
+		};
+		A60000010000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000003 /* ClipboardItem.swift */,
+				A20000010000000000000004 /* ClipboardHistory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A60000010000000000000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000005 /* ClipboardMonitor.swift */,
+				A20000010000000000000006 /* PasteService.swift */,
+				A20000010000000000000007 /* HotKeyManager.swift */,
+				A20000010000000000000008 /* PermissionService.swift */,
+				A2000001000000000000000E /* PreferencesManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A60000010000000000000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20000010000000000000009 /* ClipboardMenuView.swift */,
+				A2000001000000000000000F /* PreferencesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A60000010000000000000007 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A30000010000000000000001 /* ClipStack.app */,
+				B30000010000000000000001 /* ClipStackTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B60000010000000000000001 /* ClipStackTests */ = {
+			isa = PBXGroup;
+			children = (
+				B20000010000000000000001 /* ClipboardItemTests.swift */,
+				B20000010000000000000002 /* ClipboardHistoryTests.swift */,
+			);
+			path = ClipStackTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A70000010000000000000001 /* ClipStack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A90000010000000000000003 /* Build configuration list for PBXNativeTarget "ClipStack" */;
+			buildPhases = (
+				A80000010000000000000001 /* Sources */,
+				A40000010000000000000001 /* Frameworks */,
+				A80000010000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClipStack;
+			packageProductDependencies = (
+				A5000001000000000000000B /* HotKey */,
+			);
+			productName = ClipStack;
+			productReference = A30000010000000000000001 /* ClipStack.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B70000010000000000000001 /* ClipStackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B90000010000000000000001 /* Build configuration list for PBXNativeTarget "ClipStackTests" */;
+			buildPhases = (
+				B80000010000000000000001 /* Sources */,
+				B40000010000000000000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B85000010000000000000001 /* PBXTargetDependency */,
+			);
+			name = ClipStackTests;
+			productName = ClipStackTests;
+			productReference = B30000010000000000000001 /* ClipStackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A70000010000000000000002 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A70000010000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					B70000010000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A70000010000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A90000010000000000000001 /* Build configuration list for PBXProject "ClipStack" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A60000010000000000000001;
+			packageReferences = (
+				AA000001000000000000000B /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
+			productRefGroup = A60000010000000000000007 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A70000010000000000000001 /* ClipStack */,
+				B70000010000000000000001 /* ClipStackTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A80000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001000000000000000A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A80000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010000000000000001 /* ClipStackApp.swift in Sources */,
+				A10000010000000000000002 /* AppDelegate.swift in Sources */,
+				A10000010000000000000003 /* ClipboardItem.swift in Sources */,
+				A10000010000000000000004 /* ClipboardHistory.swift in Sources */,
+				A10000010000000000000005 /* ClipboardMonitor.swift in Sources */,
+				A10000010000000000000006 /* PasteService.swift in Sources */,
+				A10000010000000000000007 /* HotKeyManager.swift in Sources */,
+				A10000010000000000000008 /* PermissionService.swift in Sources */,
+				A10000010000000000000009 /* ClipboardMenuView.swift in Sources */,
+				A1000001000000000000000E /* PreferencesManager.swift in Sources */,
+				A1000001000000000000000F /* PreferencesView.swift in Sources */,
+				A10000010000000000000010 /* Helpers/SettingsOpener.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80000010000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000010000000000000001 /* ClipboardItemTests.swift in Sources */,
+				B10000010000000000000002 /* ClipboardHistoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B85000010000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A70000010000000000000001 /* ClipStack */;
+			targetProxy = B50000010000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A90000010000000000000004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A90000010000000000000005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		A90000010000000000000006 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClipStack/ClipStack.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClipStack/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipstack.ClipStack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A90000010000000000000007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClipStack/ClipStack.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClipStack/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipstack.ClipStack;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B90000010000000000000002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipstack.ClipStackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipStack.app/Contents/MacOS/ClipStack";
+			};
+			name = Debug;
+		};
+		B90000010000000000000003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipstack.ClipStackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipStack.app/Contents/MacOS/ClipStack";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A90000010000000000000001 /* Build configuration list for PBXProject "ClipStack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A90000010000000000000004 /* Debug */,
+				A90000010000000000000005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A90000010000000000000003 /* Build configuration list for PBXNativeTarget "ClipStack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A90000010000000000000006 /* Debug */,
+				A90000010000000000000007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B90000010000000000000001 /* Build configuration list for PBXNativeTarget "ClipStackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B90000010000000000000002 /* Debug */,
+				B90000010000000000000003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA000001000000000000000B /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A5000001000000000000000B /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA000001000000000000000B /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A70000010000000000000002 /* Project object */;
+}
