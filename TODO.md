@@ -104,19 +104,41 @@ Polish and advanced features for competitive clipboard manager:
 
 Setup for real-world usage and distribution:
 
-- [x] Unit tests for ClipboardHistory model
-- [ ] Sparkle framework for auto-updates
+### v0.1.0 Complete ✅
+
+- [x] Unit tests for ClipboardHistory model (44 tests)
+- [x] Homebrew Cask distribution
+  - [x] Create custom tap: homebrew-clipstack
+  - [x] Create cask formula with SHA256
+  - [x] Users can install: `brew tap weiv/clipstack && brew install clipstack`
+- [x] Release v0.1.0 to GitHub
+  - [x] Build Release configuration
+  - [x] Create DMG (533 KB)
+  - [x] Create GitHub release with notes
+  - [x] Add CHANGELOG.md
+
+### Next Steps
+
+- [ ] Code signing with Developer ID (required for production distribution)
+  - Obtain Apple Developer ID certificate
+  - Sign Release build: `codesign --deep --force --verify --verbose --sign "Developer ID Application" ClipStack.app`
+  - Notarize with Apple: `xcrun notarytool submit ClipStack.dmg --apple-id user@example.com`
+  - This ensures no "unidentified developer" warning on first launch
+
+- [ ] Submit to Homebrew Core (optional, increases discoverability)
+  - Fork https://github.com/Homebrew/homebrew-casks
+  - Add cask to `Casks/c/clipstack.rb`
+  - Create PR (Homebrew team verifies code signing)
+  - Once merged: users can `brew install clipstack` without tap
+
+- [ ] Sparkle framework for auto-updates (optional, enhances user experience)
   - Add SPM dependency: sparkle-project/Sparkle
-  - Generate public/private keys for update signing
-  - Set up update feed on web server
-- [ ] DMG or Homebrew Cask distribution
-  - Create DMG with nice installer
-  - Or: submit to Homebrew Casks for `brew install macclip`
-- [ ] Code signing with Developer ID for distribution outside App Store
-  - Get Apple Developer ID certificate
-  - Sign app bundle with `codesign` command
-  - Notarize with Apple (required for first-run)
+  - Generate public/private Ed25519 keys for signing updates
+  - Implement update checking in app
+  - Set up update feed on web server or GitHub Pages
+  - Allows users to update with in-app notification instead of manual install
+
 - [ ] Memory usage profiling for long-running sessions
-  - Monitor memory growth over time
+  - Monitor memory growth over time with Instruments
   - Consider weak references if keeping large text items
   - Profile with Instruments (Allocations tool)
