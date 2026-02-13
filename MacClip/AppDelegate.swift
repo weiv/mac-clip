@@ -3,6 +3,7 @@ import Cocoa
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private var clipboardMonitor: ClipboardMonitor?
     private var hotKeyManager: HotKeyManager?
+    private var preferencesObserver: NSObjectProtocol?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         PermissionService.checkAccessibility()
@@ -14,10 +15,25 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         clipboardMonitor?.start()
 
         hotKeyManager = HotKeyManager()
-        hotKeyManager?.register()
+        let modifiers = PreferencesManager.shared.hotKeyModifiers.modifierFlags
+        hotKeyManager?.register(modifiers: modifiers)
+
+        // Listen for preference changes
+        preferencesObserver = NotificationCenter.default.addObserver(
+            forName: NSNotification.Name("HotKeyModifiersDidChange"),
+            object: nil,
+            queue: .main
+        ) { [weak self] notification in
+            if let modifiers = notification.object as? NSEvent.ModifierFlags {
+                self?.hotKeyManager?.updateModifiers(modifiers)
+            }
+        }
     }
 
     func applicationWillTerminate(_ notification: Notification) {
+        if let observer = preferencesObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
         clipboardMonitor?.stop()
         hotKeyManager?.unregister()
     }

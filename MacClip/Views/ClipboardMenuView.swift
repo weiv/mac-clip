@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ClipboardMenuView: View {
     @ObservedObject var history = ClipboardHistory.shared
+    @ObservedObject var preferences = PreferencesManager.shared
 
     var body: some View {
         if history.items.isEmpty {
@@ -16,13 +17,9 @@ struct ClipboardMenuView: View {
                         Text(item.displayText)
                             .lineLimit(1)
                         Spacer()
-                        if index < 9 {
-                            Text("⌘⇧\(index + 1)")
-                                .foregroundColor(.secondary)
-                        } else if index == 9 {
-                            Text("⌘⇧0")
-                                .foregroundColor(.secondary)
-                        }
+                        let keyNumber = index < 9 ? index + 1 : 0
+                        Text("\(preferences.hotKeyModifiers.displayName)\(keyNumber)")
+                            .foregroundColor(.secondary)
                     }
                 }
             }

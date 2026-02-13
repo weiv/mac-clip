@@ -10,8 +10,10 @@ final class HotKeyManager {
         self.history = history
     }
 
-    func register() {
-        // Map Command+Option+1 through Command+Option+0 to history indices 0-9
+    func register(modifiers: NSEvent.ModifierFlags = [.command, .option]) {
+        unregister()  // Clear existing first
+
+        // Map 1 through 0 to history indices 0-9
         // Keys 1-9 map to indices 0-8, key 0 maps to index 9
         let keyMappings: [(Key, Int)] = [
             (.one, 0),
@@ -27,7 +29,7 @@ final class HotKeyManager {
         ]
 
         for (key, index) in keyMappings {
-            let hk = HotKey(key: key, modifiers: [.command, .option])
+            let hk = HotKey(key: key, modifiers: modifiers)
             hk.keyDownHandler = { [weak self] in
                 guard let self else { return }
                 if let item = self.history.item(at: index) {
@@ -36,6 +38,10 @@ final class HotKeyManager {
             }
             hotKeys.append(hk)
         }
+    }
+
+    func updateModifiers(_ modifiers: NSEvent.ModifierFlags) {
+        register(modifiers: modifiers)
     }
 
     func unregister() {
