@@ -19,20 +19,42 @@ This is an experiment in LLM assisted coding - I was missing the extended clipbo
 - macOS 13.0+
 - Accessibility permission (prompted on first launch, needed for paste simulation)
 
-## Build & Run
+## Installation
+
+### Homebrew (Recommended)
+
+```bash
+brew tap weiv/clipstack
+brew install clipstack
+```
+
+Then launch ClipStack from Applications or use Spotlight (⌘Space).
+
+### From Source
+
+Clone the repository and build:
+
+```bash
+git clone https://github.com/weiv/clipstack.git
+cd clipstack
+xcodebuild -project MacClip.xcodeproj -scheme ClipStack -configuration Release build
+open "$(xcodebuild -project MacClip.xcodeproj -scheme ClipStack -showBuildSettings 2>/dev/null | grep ' BUILT_PRODUCTS_DIR' | awk '{print $3}')/ClipStack.app"
+```
+
+## Build & Run (Development)
 
 ```bash
 # Build
-xcodebuild -project MacClip.xcodeproj -scheme MacClip -configuration Debug build
+xcodebuild -project MacClip.xcodeproj -scheme ClipStack -configuration Debug build
 
 # Run
-open "$(xcodebuild -project MacClip.xcodeproj -scheme MacClip -showBuildSettings 2>/dev/null | grep ' BUILT_PRODUCTS_DIR' | awk '{print $3}')/MacClip.app"
+open "$(xcodebuild -project MacClip.xcodeproj -scheme ClipStack -showBuildSettings 2>/dev/null | grep ' BUILT_PRODUCTS_DIR' | awk '{print $3}')/ClipStack.app"
 ```
 
 ## Testing
 
 ```bash
-xcodebuild test -project MacClip.xcodeproj -scheme MacClip -destination 'platform=macOS'
+xcodebuild test -project MacClip.xcodeproj -scheme ClipStack -destination 'platform=macOS'
 ```
 
 44 unit tests cover the model layer:
