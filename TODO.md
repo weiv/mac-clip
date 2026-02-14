@@ -90,9 +90,10 @@ Polish and advanced features for competitive clipboard manager:
 - [ ] Drag and drop items to reorder or paste
   - Drag item to other app to paste
   - Reorder within history (if persisted to disk)
-- [ ] Custom app icon
-  - Current: default app icon
-  - Design menu bar-appropriate icon (simple, monochrome)
+- [x] Custom app icon
+  - [x] Design menu bar-appropriate icon (stacked papers design, teal/blue)
+  - [x] Add 1024×1024 PNG to Assets.xcassets
+  - [x] Xcode auto-scales to all required macOS sizes
 - [ ] Dark/light mode-aware styling
   - Menus should respect system appearance
   - Use NSAppearance for detection
@@ -116,6 +117,18 @@ Setup for real-world usage and distribution:
   - [x] Create DMG (533 KB)
   - [x] Create GitHub release with notes
   - [x] Add CHANGELOG.md
+
+### v0.1.1 Complete ✅
+
+- [x] Add app icon
+  - [x] Design stacked papers icon (teal/blue gradient)
+  - [x] Add to Xcode Assets.xcassets
+  - [x] Rename Xcode project to ClipStack (from MacClip)
+- [x] Release v0.1.1 to GitHub
+  - [x] Build Release configuration with new icon
+  - [x] Create DMG
+  - [x] Create GitHub release v0.1.1
+  - [x] Update Homebrew cask formula (version 0.1.1, new SHA256)
 
 ### Next Steps
 
