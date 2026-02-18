@@ -78,12 +78,12 @@ Polish and advanced features for competitive clipboard manager:
 - [ ] Shortcut that displays a popup menu with latest few items that can be clicked on to paste
   - Already partially implemented (Command+Option+0 shows popup menu)
   - Enhance with larger preview and better interaction
-- [ ] Timestamp display (e.g. "2 min ago") on each item
-  - Add relative time helper function
-  - Display in menu or preview tooltip
-- [ ] Preview tooltip on hover for long items
-  - Show full text in tooltip for items > 80 chars
-  - Use NSToolTip or custom NSPopover
+- [x] Timestamp display (e.g. "2 min ago") on each item
+  - `relativeTime(_:)` helper: just now / Xm ago / Xh ago / Xd ago / MMM d
+  - Rendered inline via `Text + Text` concatenation (secondary color, caption font)
+  - Items truncated to 45 chars to keep menu compact
+- [x] Preview tooltip on hover for long items
+  - `.help(tooltipText(for:))` on each Button shows full text/URL/path on hover
 - [ ] Notification sound or visual feedback on paste
   - Brief "pasted" notification in bottom corner
   - Optional sound effect on settings

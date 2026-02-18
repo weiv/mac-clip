@@ -15,8 +15,9 @@ struct ClipboardMenuView: View {
                 Button(action: {
                     PasteService.paste(item)
                 }) {
-                    contentLabel(for: item.content)
+                    contentLabel(for: item.content, timestamp: relativeTime(item.copiedAt))
                 }
+                .help(tooltipText(for: item.content))
                 .keyboardShortcut(KeyEquivalent(key), modifiers: preferences.hotKeyModifiers.eventModifiers)
             }
         }
@@ -43,50 +44,78 @@ struct ClipboardMenuView: View {
         .keyboardShortcut("q")
     }
 
+    private func relativeTime(_ date: Date) -> String {
+        let seconds = Int(Date().timeIntervalSince(date))
+        switch seconds {
+        case ..<60:     return "just now"
+        case ..<3600:   return "\(seconds / 60)m ago"
+        case ..<86400:  return "\(seconds / 3600)h ago"
+        case ..<604800: return "\(seconds / 86400)d ago"
+        default:
+            let f = DateFormatter()
+            f.dateFormat = "MMM d"
+            return f.string(from: date)
+        }
+    }
+
+    private func tooltipText(for content: ClipboardContent) -> String {
+        switch content {
+        case .plainText(let s):          return s
+        case .webURL(let url):           return url.absoluteString
+        case .fileURL(let urls):         return urls.map(\.path).joined(separator: "\n")
+        case .richText(_, let fallback): return fallback
+        case .image:                     return "Image"
+        }
+    }
+
+    /// Truncates primary text and appends a dimmed timestamp using Text concatenation —
+    /// a single Text view that renders correctly in .menu MenuBarExtra.
+    private func rowText(_ primary: String, timestamp: String, color: Color = .primary) -> Text {
+        let truncated = primary.count > 45 ? String(primary.prefix(45)) + "…" : primary
+        return Text(truncated).foregroundColor(color)
+            + Text("  \(timestamp)").font(.caption).foregroundColor(.secondary)
+    }
+
     @ViewBuilder
-    private func contentLabel(for content: ClipboardContent) -> some View {
+    private func contentLabel(for content: ClipboardContent, timestamp: String) -> some View {
         switch content {
         case .plainText(let s):
             Label {
-                Text(s.trimmingCharacters(in: .whitespacesAndNewlines))
-                    .lineLimit(1)
+                rowText(s.trimmingCharacters(in: .whitespacesAndNewlines), timestamp: timestamp)
             } icon: {
                 Image(systemName: content.typeIcon)
             }
         case .richText(_, let fallback):
             Label {
-                Text(fallback.trimmingCharacters(in: .whitespacesAndNewlines))
-                    .lineLimit(1)
+                rowText(fallback.trimmingCharacters(in: .whitespacesAndNewlines), timestamp: timestamp)
             } icon: {
                 Image(systemName: content.typeIcon)
             }
         case .webURL(let url):
             Label {
-                Text(url.absoluteString)
-                    .lineLimit(1)
-                    .foregroundColor(.blue)
+                rowText(url.absoluteString, timestamp: timestamp, color: .blue)
             } icon: {
                 Image(systemName: content.typeIcon)
                     .foregroundColor(.blue)
             }
         case .fileURL(let urls):
-            HStack {
+            Label {
+                rowText(urls.map { $0.lastPathComponent }.joined(separator: ", "), timestamp: timestamp)
+            } icon: {
                 if let first = urls.first {
                     Image(nsImage: NSWorkspace.shared.icon(forFile: first.path))
                         .resizable()
                         .frame(width: 16, height: 16)
                 }
-                Text(urls.map { $0.lastPathComponent }.joined(separator: ", "))
-                    .lineLimit(1)
             }
         case .image(_, let thumbnail):
-            HStack {
+            Label {
+                rowText("Image", timestamp: timestamp, color: .secondary)
+            } icon: {
                 Image(nsImage: thumbnail)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 16)
-                Text("Image")
-                    .foregroundColor(.secondary)
             }
         }
     }
