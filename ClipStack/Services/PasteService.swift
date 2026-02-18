@@ -19,6 +19,7 @@ enum PasteService {
         // Delay to allow the menu to close and the previous app to regain focus
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             simulateCmdV()
+            PasteHUD.shared.show()
         }
     }
 
