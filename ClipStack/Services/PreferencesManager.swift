@@ -40,6 +40,16 @@ enum HotKeyModifierCombo: String, CaseIterable, Identifiable {
         case .commandControl: return "Command+Control"
         }
     }
+
+    var eventModifiers: EventModifiers {
+        switch self {
+        case .commandOption: return [.command, .option]
+        case .commandShift: return [.command, .shift]
+        case .controlOption: return [.control, .option]
+        case .controlShift: return [.control, .shift]
+        case .commandControl: return [.command, .control]
+        }
+    }
 }
 
 final class PreferencesManager: ObservableObject {

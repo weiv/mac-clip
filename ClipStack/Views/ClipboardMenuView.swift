@@ -11,17 +11,13 @@ struct ClipboardMenuView: View {
                 .foregroundColor(.secondary)
         } else {
             ForEach(Array(history.items.enumerated()), id: \.element.id) { index, item in
+                let key: Character = index < 9 ? Character("\(index + 1)") : "0"
                 Button(action: {
                     PasteService.paste(item)
                 }) {
-                    HStack {
-                        contentLabel(for: item.content)
-                        Spacer()
-                        let keyNumber = index < 9 ? index + 1 : 0
-                        Text("\(preferences.hotKeyModifiers.displayName)\(keyNumber)")
-                            .foregroundColor(.secondary)
-                    }
+                    contentLabel(for: item.content)
                 }
+                .keyboardShortcut(KeyEquivalent(key), modifiers: preferences.hotKeyModifiers.eventModifiers)
             }
         }
 
