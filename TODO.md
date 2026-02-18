@@ -145,6 +145,13 @@ Setup for real-world usage and distribution:
   - [x] Create GitHub release with notes
   - [x] Update Homebrew cask formula (version 0.1.2, new SHA256)
 
+### v0.1.4 Complete ✅
+
+- [x] Sparkle auto-update support
+- [x] Release v0.1.4 to GitHub (signed + notarized)
+- [x] Update Homebrew cask (version 0.1.4)
+- [x] appcast.xml updated with v0.1.4 entry
+
 ### v0.1.3 Complete ✅
 
 - [x] Timestamps on menu items (relative time, Text+Text concatenation)

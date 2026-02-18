@@ -6,6 +6,19 @@
         <description>ClipStack update feed</description>
         <language>en</language>
         <item>
+            <title>Version 0.1.4</title>
+            <pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate>
+            <sparkle:version>0.1.4</sparkle:version>
+            <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure
+                url="https://github.com/weiv/clipstack/releases/download/v0.1.4/ClipStack.dmg"
+                sparkle:edSignature="6xak5kYyENoB7j7iwYObhHUsUyHVLSk56mk3uI2wt8dBSecVixQBh6OAR+fgpBcgTZB8/T18x4AwGkAVQpu3BQ=="
+                length="3478179"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.1.3</title>
             <pubDate>Mon, 17 Feb 2026 00:00:00 +0000</pubDate>
             <sparkle:version>0.1.3</sparkle:version>
