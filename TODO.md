@@ -168,12 +168,11 @@ Setup for real-world usage and distribution:
   - Create PR (Homebrew team verifies code signing)
   - Once merged: users can `brew install clipstack` without tap
 
-- [ ] Sparkle framework for auto-updates (optional, enhances user experience)
-  - Add SPM dependency: sparkle-project/Sparkle
-  - Generate public/private Ed25519 keys for signing updates
-  - Implement update checking in app
-  - Set up update feed on web server or GitHub Pages
-  - Allows users to update with in-app notification instead of manual install
+- [x] Sparkle framework for auto-updates
+  - Sparkle 2.8.1 via SPM
+  - Ed25519 keys generated; public key in Info.plist
+  - appcast.xml hosted at github.com/weiv/clipstack/main/appcast.xml
+  - "Check for Updates..." in menu; auto-checks on launch
 
 - [ ] Memory usage profiling for long-running sessions
   - Monitor memory growth over time with Instruments
