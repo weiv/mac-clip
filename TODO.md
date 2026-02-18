@@ -131,6 +131,19 @@ Setup for real-world usage and distribution:
   - [x] Create GitHub release v0.1.1
   - [x] Update Homebrew cask formula (version 0.1.1, new SHA256)
 
+### v0.1.2 Complete ✅
+
+- [x] Multi-type clipboard support (P2)
+  - [x] `ClipboardContent` enum: plainText, webURL, fileURL, richText, image
+  - [x] Full-fidelity paste for all content types
+  - [x] Image thumbnails, Finder icons, link color in menu
+  - [x] 88 tests passing
+- [x] Release v0.1.2 to GitHub
+  - [x] Build Release configuration
+  - [x] Create DMG
+  - [x] Create GitHub release with notes
+  - [x] Update Homebrew cask formula (version 0.1.2, new SHA256)
+
 ### Next Steps
 
 - [ ] Code signing with Developer ID (required for production distribution)
